@@ -8,10 +8,10 @@
         const settings = {
         method: 'POST',
         mode: 'no-cors',
-        defaultJson: true,
         headers: {
-            Content-Type: 'application/json',
-            Authorization: 'Bearer pat-na1-be681d2e-e7d8-4cb9-8f5c-47783a93c1ba',
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            'Authorization': 'Bearer pat-na1-be681d2e-e7d8-4cb9-8f5c-47783a93c1ba',
         },
         body: {
             "properties": {
