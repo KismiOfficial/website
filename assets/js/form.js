@@ -7,6 +7,7 @@
         console.log('Inside!');
         const settings = {
         method: 'POST',
+        mode: 'no-cors',
         defaultJson: true,
         headers: {
             'Content-Type': 'application/json',
