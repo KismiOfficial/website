@@ -1,4 +1,5 @@
-import axios, {isCancel, AxiosError} from 'axios';
+// Import axios
+import axios from 'axios';
 
 (function() {
     console.log('Test!');
