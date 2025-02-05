@@ -1,3 +1,5 @@
+import axios, {isCancel, AxiosError} from 'axios';
+
 (function() {
     console.log('Test!');
     
@@ -60,6 +62,7 @@
               }
             );
             console.log('After');
+            return 'End';
             } catch (e) {
                 console.log(e);
                 return e;
