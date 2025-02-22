@@ -23,6 +23,11 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- GLightbox CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/glightbox@3.0.6/dist/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- GLightbox JS -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.0.6/dist/js/glightbox.min.js"></script>
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -86,8 +91,47 @@
         <p data-aos="fade-up" data-aos-delay="200">Nightlife Reimagined</p>
         <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
           <a href="#about" class="btn-get-started">Get Started</a>
-          <a href="https://youtube.com/embed/JN9SpXF_TdU" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+          <div class="open-video">
+            <a id="open-video" class="btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+          </div>
           
+          <!-- Popup Modal (Hidden by default) -->
+          <div id="video-modal" class="modal">
+            <div class="modal-content">
+              <span id="close-video" class="close">&times;</span>
+              <iframe id="video-iframe" width="560" height="315" title="" src="https://www.youtube.com/embed/JN9SpXF_TdU" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+          
+          <script>
+            // Get modal and video iframe elements
+            var modal = document.getElementById("video-modal");
+            var iframe = document.getElementById("video-iframe");
+            var btn = document.getElementById("open-video");
+            var span = document.getElementById("close-video");
+
+            // Open the modal when the button is clicked
+            btn.onclick = function() {
+              modal.style.display = "block";
+              iframe.src = "https://www.youtube.com/embed/JN9SpXF_TdU?autoplay=1"; // Replace with your YouTube video ID
+            }
+
+            // Close the modal when the close button is clicked
+            span.onclick = function() {
+              modal.style.display = "none";
+              iframe.src = ""; // Stop the video when modal is closed
+            }
+
+            // Close the modal if the user clicks anywhere outside the modal content
+            window.onclick = function(event) {
+              if (event.target == modal) {
+                modal.style.display = "none";
+                iframe.src = ""; // Stop the video if clicked outside
+              }
+            }
+          </script>
+          
+          <!-- <a href="https://youtube.com/embed/JN9SpXF_TdU" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
           <!-- <a class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
           <!-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
         </div>
@@ -96,8 +140,7 @@
     </section>
     
   </main>
-
-
+  
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
