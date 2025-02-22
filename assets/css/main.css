@@ -1048,14 +1048,13 @@ section,
     /* Modal Content */
     .modal-content {
       position: relative;
-      margin: 5% auto;
-      padding: 20px;
+      margin: 8% auto;
+      padding: 15px;
       background-color: white;
       border-radius: 8px;
-      width: 50%;
+      width: 80%;
       height: 80%;
       max-width: 800px;
-      z-index: 10000000;
     }
 
     /* Close button */
