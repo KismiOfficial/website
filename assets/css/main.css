@@ -589,6 +589,7 @@ h6 {
   align-items: center;
   justify-content: center;
   position: fixed;
+  z-index: 997;
 }
 
 .footer .footer-links {
